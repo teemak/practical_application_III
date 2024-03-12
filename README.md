@@ -3,7 +3,7 @@
 ## Bank Marketing Data
 The data consists of a group of people who were contacted via phone about subscribing to a fixed-term deposit. There are approximately 45,000 observations with 17 features. There are 48 campaigns. The data included demographic information of the customer and economic indicators [source](https://archive.ics.uci.edu/dataset/222/bank+marketing).
 
-|column|variable   |type         |description                                                                                                                                          |
+|Column|Variable   |Type         |Description                                                                                                                                          |
 |------|-----------|-------------|-----------------------------------------------------------------------------------------------------------------------------------------------------|
 |1     | age       | numeric     | The client's age.                                                                                                                                   |
 |2     | job       | categorical | Categories are admin, unknown, unemployed, management, housemaid, entrepreneur, student, blue-collar, self-employed, retired, technician, services. |

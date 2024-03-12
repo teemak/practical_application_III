@@ -40,10 +40,20 @@ A simple baseline model will be Logistic Regression due to its speed and interpr
 Some features were more important in certain models than others. For example, the Decision Tree model identified default status and age as the most significant features, while marital status and default had the largest coefficients in the logistic regression model.
 
 Interestingly, the Decision Tree model exhibited bias towards default status and age. With 79% of the class labeled as "no," the model may be influenced by this imbalance. Additionally, the age distribution peaked at 30 years old, coinciding with the highest number of subscriptions across all age groups. This highlights the model's tendency to favor dominant classes.
-![Age Distribution Chart]('imgs/age_distribution.png')
+
+<div align='center'>
+  <img src='imgs/age_distribution.png' alt='Age Distribution' height='400' width='500'/>
+</div>
 
 The logistic regression model identified marital status and default status as its most influential coefficients. Specifically, the married and divorced categories exhibited a higher subscription rate compared to others. The presence of default status aligns with expectations, as individuals facing financial constraints may be less likely to invest in a term deposit.
-![Marital Statuses Subscription](imgs/marital_statuses_subscription.png) ![LR Coefficients](imgs/log_reg_coefficients.png)
+
+<div align='center'>
+    <img src='imgs/log_reg_coefficients.png' alt='Logistic Regression Coefficient' height='400' width='300'/>
+&nbsp;
+  <img src='imgs/marital_statuses_subscription.png' alt='Marital Statuses Subscription' height='400' width='500'/>
+  
+</div>
+
 
 The baseline models, employing default parameters for K-Nearest Neighbor and Decision Trees, exhibited overfitting issues, evidenced by significantly higher training scores compared to test scores. Specifically, there was a 13% and 30% decrease in accuracy when testing against unseen data for K-Nearest Neighbor and Decision Trees, respectively.
 

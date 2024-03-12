@@ -1,7 +1,7 @@
 # Practical Assignment III
 
 ## Bank Marketing Data
-The data consists of a group of people who were contacted via phone about subscribing to a fixed-term deposit. There are approximately 45,000 observations with 17 features. There are 48 campaigns. The data included demographic information of the customer and economic indicators [source](https://archive.ics.uci.edu/dataset/222/bank+marketing).
+The data consists of a group of people who were contacted via phone about subscribing to a fixed-term deposit. There are approximately 45,000 observations with 17 features. There are 48 campaigns. The data included demographic information of the customer and economic indicators. [(source)](https://archive.ics.uci.edu/dataset/222/bank+marketing)
 
 |Column|Variable   |Type         |Description                                                                                                                                          |
 |------|-----------|-------------|-----------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -39,28 +39,26 @@ A simple baseline model will be Logistic Regression due to its speed and interpr
 ## Findings
 Some features were more important in certain models than others. For example, the Decision Tree model identified default status and age as the most significant features, while marital status and default had the largest coefficients in the logistic regression model.
 
-Interestingly, the Decision Tree model exhibited bias towards default status and age. With 79% of the class labeled as "no," the model may be influenced by this imbalance. Additionally, the age distribution peaked at 30 years old, coinciding with the highest number of subscriptions across all age groups. This highlights the model's tendency to favor dominant classes.
+Interestingly, the Decision Tree model exhibited bias towards default status and age. With 79% of the class labeled as not in default, the model may be influenced by this imbalance. Additionally, the age distribution peaked at 30 years old, coinciding with the highest number of subscriptions across all age groups. This highlights the model's tendency to favor dominant classes.
 
 <div align='center'>
   <img src='imgs/age_distribution.png' alt='Age Distribution' height='400' width='500'/>
-</div>
+</div><br/>
 
 The logistic regression model identified marital status and default status as its most influential coefficients. Specifically, the married and divorced categories exhibited a higher subscription rate compared to others. The presence of default status aligns with expectations, as individuals facing financial constraints may be less likely to invest in a term deposit.
 
 <div align='center'>
-    <img src='imgs/log_reg_coefficients.png' alt='Logistic Regression Coefficient' height='400' width='300'/>
-&nbsp;
+  <img src='imgs/log_reg_coefficients.png' alt='Logistic Regression Coefficient' height='400' width='300'/>
+  &nbsp; &nbsp; &nbsp;
   <img src='imgs/marital_statuses_subscription.png' alt='Marital Statuses Subscription' height='400' width='500'/>
-  
-</div>
-
+</div><br/>
 
 The baseline models, employing default parameters for K-Nearest Neighbor and Decision Trees, exhibited overfitting issues, evidenced by significantly higher training scores compared to test scores. Specifically, there was a 13% and 30% decrease in accuracy when testing against unseen data for K-Nearest Neighbor and Decision Trees, respectively.
 
 Although tuning the models yielded only marginal improvements, it helped alleviate the overfitting problem to some extent. The models underwent tuning with multiple cross-validation folds, ranging from 5 to 10, yet failed to significantly impact accuracy.
 
 ## Summary
-The dataset exhibited imbalance, impacting the accuracy of machine learning models. Non-linear feature relationships posed a challenge for models like KNN and SVM, resulting in average performance even after hyperparameter tuning. These limitations indicate that traditional models may not be suitable for this dataset, suggesting a neural network for uncovering complex non-linear relationships.
+The dataset exhibited imbalance, impacting the accuracy of machine learning models. Non-linear feature relationships posed a challenge for models like KNN and SVM, resulting in average performance even after hyperparameter tuning. These limitations indicate that these models may not be suitable for this dataset, suggesting a neural network for uncovering complex non-linear relationships.
 
 The recommendation for the marketing team is to prioritize key metrics: age, marital status, and number of campaigns. Notably, the 30-40 age range and married/divorced individuals showed the highest subscription rates. Additionally, most subscriptions occurred with fewer than 5 contacts. Therefore, I suggest a targeted marketing campaign focusing on individuals aged 30-40, who are married or previously married, with a maximum of 5 contacts per customer.
 
